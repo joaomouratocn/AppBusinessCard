@@ -1,13 +1,14 @@
-package br.com.programadorjm.businesscard
+package br.com.programadorjm.businesscard.presenter.fragment
 
-import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import br.com.programadorjm.businesscard.domain.usecases.UseCasesImpl
+import br.com.programadorjm.businesscard.App
+import br.com.programadorjm.businesscard.R
+import br.com.programadorjm.businesscard.databinding.FragmentListCardBinding
 import br.com.programadorjm.businesscard.presenter.viewmodel.ListCardViewModel
 
 class ListCardFragment : Fragment() {
@@ -16,9 +17,10 @@ class ListCardFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_card, container, false)
+        val binding = FragmentListCardBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

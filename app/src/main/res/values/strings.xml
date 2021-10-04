@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">BusinessCard</string>
     <string name="str_list_business_card">List business card</string>
+    <string name="str_add_card">Add card</string>
 </resources>
