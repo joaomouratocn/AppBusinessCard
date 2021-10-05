@@ -9,5 +9,14 @@
         android:id="@+id/listCardFragment"
         android:name="br.com.programadorjm.businesscard.presenter.fragment.ListCardFragment"
         android:label="@string/str_list_business_card"
-        tools:layout="@layout/fragment_list_card" />
+        tools:layout="@layout/fragment_list_card" >
+        <action
+            android:id="@+id/action_listCardFragment_to_newCardFragment"
+            app:destination="@id/newCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newCardFragment"
+        android:name="br.com.programadorjm.businesscard.presenter.fragment.NewCardFragment"
+        android:label="@string/str_new_card"
+        tools:layout="@layout/fragment_new_card" />
 </navigation>
