@@ -5,15 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import br.com.programadorjm.businesscard.App
 import br.com.programadorjm.businesscard.R
 import br.com.programadorjm.businesscard.databinding.FragmentListCardBinding
 import br.com.programadorjm.businesscard.presenter.viewmodel.ListCardViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ListCardFragment : Fragment() {
-    lateinit var viewModel:ListCardViewModel
+    private val viewModelHilt:ListCardViewModel by viewModels()
     lateinit var binding: FragmentListCardBinding
 
     override fun onCreateView(
@@ -32,10 +35,5 @@ class ListCardFragment : Fragment() {
         binding.floatAddCard.setOnClickListener {
             findNavController().navigate(R.id.action_listCardFragment_to_newCardFragment)
         }
-
-        viewModel = ViewModelProvider(
-            viewModelStore,
-            ListCardViewModel.ListCardViewModelFactory((activity?.application as App).useCasesImpl),
-        ).get(ListCardViewModel::class.java)
     }
 }

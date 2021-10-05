@@ -4,8 +4,9 @@ import br.com.programadorjm.businesscard.data.room.CardDao
 import br.com.programadorjm.businesscard.domain.model.CardModel
 import br.com.programadorjm.businesscard.util.toCardEntity
 import br.com.programadorjm.businesscard.util.toListCardModel
+import javax.inject.Inject
 
-class CardRepositoryImpl(private val cardDao: CardDao):CardRepository {
+class CardRepositoryImpl @Inject constructor(private val cardDao: CardDao):CardRepository {
     override suspend fun getAllCards(): List<CardModel> {
         return cardDao.getAllCards().toListCardModel()
     }
