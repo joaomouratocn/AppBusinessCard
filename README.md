@@ -1,5 +1,5 @@
 # AppBusinessCard
 
-Tecnologias usadas: kotlin, room, liveData, mvvm, hilt, espresso
+Tecnologias usadas: kotlin, room, navigation components, liveData, coroutines, mvvm, hilt, espresso
 
 # Ainda em desenvolvimento 
