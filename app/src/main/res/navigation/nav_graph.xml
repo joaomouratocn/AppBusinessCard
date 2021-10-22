@@ -17,6 +17,11 @@
     <fragment
         android:id="@+id/newCardFragment"
         android:name="br.com.programadorjm.businesscard.presenter.fragment.NewCardFragment"
-        android:label="@string/str_new_card"
-        tools:layout="@layout/fragment_new_card" />
+        android:label="{action}"
+        tools:layout="@layout/fragment_new_card">
+        <argument
+            android:name="action"
+            app:argType="string"/>
+    </fragment>
+
 </navigation>

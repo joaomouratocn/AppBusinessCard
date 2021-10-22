@@ -8,6 +8,7 @@
     </data>
 
     <LinearLayout
+        android:id="@+id/layout_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -16,6 +17,7 @@
             android:id="@+id/text_input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/str_insert_name"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -30,13 +32,14 @@
             android:id="@+id/text_input_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/str_insert_phone_number"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{card.cardName}"/>
+                android:text="@{card.cardPhone}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,13 +47,14 @@
             android:id="@+id/text_input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/str_insert_email"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{card.cardName}"/>
+                android:text="@{card.cardEmail}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,21 +62,23 @@
             android:id="@+id/text_input_company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/str_insert_company"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_company"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{card.cardName}"/>
+                android:text="@{card.cardCompany}"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/btn_insert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@string/str_save"/>
+            android:text="@string/str_insert"/>
 
     </LinearLayout>
 </layout>

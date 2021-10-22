@@ -8,7 +8,7 @@ fun CardEntity.toCardModel():CardModel{
 }
 
 fun CardModel.toCardEntity():CardEntity{
-    return CardEntity(cardId, cardName, cardPhoneNumber, cardEmail, cardCompany)
+    return CardEntity(cardId, cardName, cardPhone, cardEmail, cardCompany)
 }
 
 fun List<CardEntity>.toListCardModel():List<CardModel>{

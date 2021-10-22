@@ -21,6 +21,7 @@
             android:checkable="true"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="#AB2627"
             app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="16:9"
@@ -40,6 +41,8 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{card.cardName}"
+                    android:textSize="24sp"
+                    android:textColor="#D6C087"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="João Mourato da Cruz Neto" />
@@ -49,7 +52,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@{card.cardPhoneNumber}"
+                    android:text="@{card.cardPhone}"
+                    android:textSize="24sp"
+                    android:textColor="#D6C087"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txt_name"
                     tools:text="Phone" />
@@ -60,6 +65,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@{card.cardEmail}"
+                    android:textSize="24sp"
+                    android:textColor="#D6C087"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txt_phone"
                     tools:text="Email" />
@@ -68,7 +75,10 @@
                     android:id="@+id/txt_company_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:text="@{card.cardCompany}"
+                    android:textSize="18sp"
+                    android:textColor="#D6C087"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     tools:text="Company name" />

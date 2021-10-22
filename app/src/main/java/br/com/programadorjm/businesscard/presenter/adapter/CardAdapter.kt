@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.programadorjm.businesscard.databinding.ItemLayoutCardBinding
 import br.com.programadorjm.businesscard.domain.model.CardModel
 
-class CardAdapter:ListAdapter<CardModel, CardAdapter.CardViewHolder>(CardModelCallBack()){
+class CardAdapter(private val cardClickListener: (CardModel) -> Unit) :ListAdapter<CardModel, CardAdapter.CardViewHolder>(CardModelCallBack()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         return CardViewHolder.layoutInflate(parent)
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), cardClickListener)
     }
 
     class CardViewHolder(private val binding:ItemLayoutCardBinding):RecyclerView.ViewHolder(binding.root){
@@ -30,8 +30,9 @@ class CardAdapter:ListAdapter<CardModel, CardAdapter.CardViewHolder>(CardModelCa
             }
         }
 
-        fun bind(cardModel: CardModel){
+        fun bind(cardModel: CardModel, cardClickListener: (CardModel) -> Unit){
             binding.card = cardModel
+            binding.cvContentCard.setOnClickListener { cardClickListener(cardModel) }
         }
     }
 
@@ -42,7 +43,7 @@ class CardAdapter:ListAdapter<CardModel, CardAdapter.CardViewHolder>(CardModelCa
 
         override fun areContentsTheSame(oldItem: CardModel, newItem: CardModel): Boolean {
             return oldItem.cardName == newItem.cardName &&
-                    oldItem.cardPhoneNumber == newItem.cardPhoneNumber &&
+                    oldItem.cardPhone == newItem.cardPhone &&
                     oldItem.cardEmail == newItem.cardEmail &&
                     oldItem.cardCompany == newItem.cardCompany
         }
